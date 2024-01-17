@@ -1,4 +1,4 @@
-### This README provides an overview of a data pipeline that extracts data from YouTube using the Google API, creates an EC2 instance and S3 buckets on AWS, and runs a Directed Acyclic Graph (DAG) file using an Airflow server.
+### overview of a data pipeline that extracts data from YouTube using the Google API, creates an EC2 instance and S3 buckets on AWS, and runs a Directed Acyclic Graph (DAG) file using an Airflow server.
 
 Tasks <br>
 1.Extract Data from YouTube using Google API: The first task involves using a Python script with the Google API client library to extract data from the YouTube API.<br/><br/>
