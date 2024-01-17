@@ -1,33 +1,45 @@
-### overview of a data pipeline that extracts data from YouTube using the Google API, creates an EC2 instance and S3 buckets on AWS, and runs a Directed Acyclic Graph (DAG) file using an Airflow server.
+# YouTube Data Pipeline with Apache Airflow
 
-### purpose:
-Automate YouTube data extraction, transformation, and loading (ETL) for data-driven insights. Scalable workflow orchestration using Apache Airflow with components like EC2, S3, and YouTube Data API.
+## Overview
+This data pipeline automates the extraction, transformation, and loading (ETL) of YouTube data using the Google API. It involves creating an EC2 instance and S3 buckets on AWS, orchestrated by Apache Airflow through a Directed Acyclic Graph (DAG) file.
 
-Tools:
-Apache Airflow: DAGs, Operators, S3Hook.<br/>
-Amazon EC2: Execution environment.<br/>
-Amazon S3: Storage for transformed data.<br/>
-YouTube Data API: Programmatically access YouTube data.<br/>
-username: admin  password: <br/>
+## Purpose
+Automate YouTube data extraction, transformation, and loading for data-driven insights. Utilize Apache Airflow for scalable workflow orchestration with components like EC2, S3, and the YouTube Data API.
 
-Tasks <br>
-1.Extract Data from YouTube using Google API: The first task involves using a Python script with the Google API client library to extract data from the YouTube API.<br/><br/>
-2.Create EC2 Instance and S3 Buckets: The second task involves setting up an AWS environment. This includes creating an EC2 instance and S3 buckets.
-It's recommended to select Ubuntu for the EC2 machine and allow HTTPS. If possible, select t2.medium to run the Airflow server as t2.micro can cause issues.<br/><br/>
-3.Run DAG File Using Airflow Server: The final task involves setting up the Airflow pipeline. 
-This includes writing a Python script named youtube_dag.py that instantiates the DAG, defines the tasks, and sets their dependencies.<br/><br/>
+## Tools
+- **Apache Airflow:**
+  - DAGs, Operators, S3Hook.
+- **Amazon EC2:**
+  - Execution environment.
+- **Amazon S3:**
+  - Storage for transformed data.
+- **YouTube Data API:**
+  - Programmatically access YouTube data.
+  
+  **Credentials:**
+  - Username: admin
+  - Password: [Your_Password_Here]
 
-### Additiona Notes
-1.Create a directory in your S3 bucket, for example, youtube_dag, and make sure to update the airflow.cfg file with your directory name.<br/>
-2.Copy and paste your youtube_etl.py and youtube_dag.py files using nano or vim.<br/>
-3.hen your Airflow server runs, it will create a DAG named youtube_dag.<br/>
-4.Click on youtube_dag and run the DAG. It will show if it's successful or failed. if it's failed check yorur aiflow log.Now, in your S3 bucket, you can see the CSV file.<br/>
+## Tasks
+1. **Extract Data from YouTube using Google API:**
+   Use a Python script with the Google API client library to extract data from the YouTube API.
 
-### Learning Areas:
-Airflow basics (DAGs, Operators).<br/>
-YouTube Data API usage.<br/>
-ETL concepts and efficient workflows.<br/>
-AWS basics (EC2, S3).<br/>
-Data pipeline architecture.<br/>
-Monitoring, troubleshooting, and best practices.<br/>
+2. **Create EC2 Instance and S3 Buckets:**
+   Set up an AWS environment, including creating an EC2 instance and S3 buckets. Choose Ubuntu for the EC2 machine, allow HTTPS, and preferably select t2.medium for the Airflow server.
 
+3. **Run DAG File Using Airflow Server:**
+   Set up the Airflow pipeline by writing a Python script (`youtube_dag.py`) that instantiates the DAG, defines tasks, and sets dependencies.
+
+## Additional Notes
+1. Create a directory in your S3 bucket (e.g., `youtube_dag`) and update the `airflow.cfg` file with your directory name.
+2. Copy and paste your `youtube_etl.py` and `youtube_dag.py` files using nano or vim.
+3. When your Airflow server runs, it will create a DAG named `youtube_dag`.
+4. Click on `youtube_dag` and run the DAG. Check for success or failure. If failed, inspect your Airflow log. In your S3 bucket, you can find the CSV file.
+
+## Learning Areas
+- Airflow basics (DAGs, Operators).
+- YouTube Data API usage.
+- ETL concepts and efficient workflows.
+- AWS basics (EC2, S3).
+- Data pipeline architecture.
+- Monitoring, troubleshooting, and best practices.
