@@ -1,5 +1,15 @@
 ### overview of a data pipeline that extracts data from YouTube using the Google API, creates an EC2 instance and S3 buckets on AWS, and runs a Directed Acyclic Graph (DAG) file using an Airflow server.
 
+### purpose:
+Automate YouTube data extraction, transformation, and loading (ETL) for data-driven insights. Scalable workflow orchestration using Apache Airflow with components like EC2, S3, and YouTube Data API.
+
+Tools:
+Apache Airflow: DAGs, Operators, S3Hook.<br/>
+Amazon EC2: Execution environment.<br/>
+Amazon S3: Storage for transformed data.<br/>
+YouTube Data API: Programmatically access YouTube data.<br/>
+username: admin  password: <br/>
+
 Tasks <br>
 1.Extract Data from YouTube using Google API: The first task involves using a Python script with the Google API client library to extract data from the YouTube API.<br/><br/>
 2.Create EC2 Instance and S3 Buckets: The second task involves setting up an AWS environment. This includes creating an EC2 instance and S3 buckets.
@@ -12,4 +22,12 @@ This includes writing a Python script named youtube_dag.py that instantiates the
 2.Copy and paste your youtube_etl.py and youtube_dag.py files using nano or vim.<br/>
 3.hen your Airflow server runs, it will create a DAG named youtube_dag.<br/>
 4.Click on youtube_dag and run the DAG. It will show if it's successful or failed. if it's failed check yorur aiflow log.Now, in your S3 bucket, you can see the CSV file.<br/>
+
+### Learning Areas:
+Airflow basics (DAGs, Operators).<br/>
+YouTube Data API usage.<br/>
+ETL concepts and efficient workflows.<br/>
+AWS basics (EC2, S3).<br/>
+Data pipeline architecture.<br/>
+Monitoring, troubleshooting, and best practices.<br/>
 
